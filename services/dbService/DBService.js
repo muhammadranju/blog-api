@@ -28,7 +28,10 @@ function find(name) {
   }
 
   if (name === "post") {
-    return Post.find().populate("author", "-password -__v").select("-__v");
+    return Post.find()
+      .populate("author", "-password -__v")
+      .select("-__v")
+      .sort({ _id: -1 });
   }
 
   if (name === "comment") {
