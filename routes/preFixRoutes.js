@@ -7,6 +7,8 @@ import authRoutes from "./authRoutes/authRoutes.js";
 
 const router = express.Router();
 
+router.get("/", (req, res) => res.redirect("/api/v1/home"));
+
 router.use("/api/v1/home", homeRoutes);
 router.use("/api/v1/users", userRoutes);
 router.use("/api/v1/posts", postsRoutes);
